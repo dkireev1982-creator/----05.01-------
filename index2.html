@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1><span>IT</span>-Marketing</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="index2.html">Аналитика</a>
+            <a href="#">Стратегия</a>
+            <a href="#">Кейсы</a>
+        </nav>
+        <button class="desktop-btn">Записаться на курс </button>
+        <!-- Бургер-меню -->
+        <div class="burger-button">
+            <div class="open-mobile-menu"></div>
+        </div>
+        <!-- Мобильное меню -->
+        <div class="mobile-menu">
+            <a href="index.html" class="mobile-nav-link">Главная</a>
+            <a href="index2.html" class="mobile-nav-link">Аналитика </a>
+            <a href="#" class="mobile-nav-link">Стратегия </a>
+            <a href="#" class="mobile-nav-link">Кейсы</a>
+            <button class="mobile-application-btn">Записаться на курс</button>
+        </div>
+    </header>
+
+
+
+<!-- БЛОК 1: Hero с анимированным фоном -->
+<div class="block1-enhanced">
+    <div class="floating-elements" id="floatingElements"></div>
+    <div class="hero-enhanced__content">
+        <div class="hero-enhanced__badge">
+            <span> Инновации 2026</span>
+        </div>
+        <h1 class="hero-enhanced__title">
+            Аналитика будущего <span>уже сегодня</span>
+        </h1>
+        <p class="hero-enhanced__desc">
+            Нейросетевые алгоритмы, предиктивная аналитика и автоматизация процессов — 
+            всё это доступно в единой платформе для вашего бизнеса.
+        </p>
+        <div class="hero-enhanced__stats">
+            <div class="stat-enhanced">
+                <span class="stat-enhanced__number" data-target="500">0</span>
+                <span class="stat-enhanced__label">+ клиентов</span>
+            </div>
+            <div class="stat-enhanced">
+                <span class="stat-enhanced__number" data-target="99.9">0</span>
+                <span class="stat-enhanced__label">% точности</span>
+            </div>
+            <div class="stat-enhanced">
+                <span class="stat-enhanced__number" data-target="24">0</span>
+                <span class="stat-enhanced__label">/7 поддержка</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- БЛОК 2: 3D карточки с эффектом наклона -->
+<div class="block2-advanced">
+    <h2>Ключевые возможности</h2>
+    <p>Всё необходимое для принятия решений на основе данных</p>
+    <div class="cards-3d" id="cards3dContainer">
+        <div class="card-3d" data-tilt>
+            <div class="card-3d__icon">📊</div>
+            <div class="card-3d__title">Дашборды реального времени</div>
+            <div class="card-3d__desc">Визуализируйте данные в удобных графиках и диаграммах с автообновлением каждую секунду.</div>
+            <a href="#" class="card-3d__link">Подробнее →</a>
+        </div>
+        <div class="card-3d" data-tilt>
+            <div class="card-3d__icon">🤖</div>
+            <div class="card-3d__title">AI-прогнозы</div>
+            <div class="card-3d__desc">Нейросеть анализирует исторические данные и предсказывает тренды с точностью до 95%.</div>
+            <a href="#" class="card-3d__link">Подробнее →</a>
+        </div>
+        <div class="card-3d" data-tilt>
+            <div class="card-3d__icon">🔗</div>
+            <div class="card-3d__title">50+ интеграций</div>
+            <div class="card-3d__desc">Подключайте CRM, рекламные кабинеты, коллтрекинг и любые API за 5 минут.</div>
+            <a href="#" class="card-3d__link">Подробнее →</a>
+        </div>
+    </div>
+</div>
+
+<!-- БЛОК 3: Таймлайн развития -->
+<div class="block3-timeline">
+    <h2>Этапы развития платформы</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-item__year">2023</div>
+            <div class="timeline-item__title">Запуск MVP</div>
+            <div class="timeline-item__desc">Первая версия платформы с базовым набором метрик и отчётов.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-item__year">2024</div>
+            <div class="timeline-item__title">Нейросетевой движок</div>
+            <div class="timeline-item__desc">Интеграция ML-моделей для прогнозирования и аномалий.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-item__year">2025</div>
+            <div class="timeline-item__title">Экосистема</div>
+            <div class="timeline-item__desc">API для разработчиков, мобильное приложение, авто-отчёты в Telegram.</div>
+        </div>
+    </div>
+</div>
+
+<!-- БЛОК 4: FAQ Аккордеон -->
+<div class="block4-faq">
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Как происходит интеграция с моей CRM?</h3>
+                <div class="faq-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0019FF" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="faq-answer">
+                <p>Мы подключаемся через API вашей CRM. Процесс занимает не более 15 минут под руководством нашего специалиста. Поддерживаем amoCRM, Bitrix24, RetailCRM и 50+ других систем.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Какая гарантия точности данных?</h3>
+                <div class="faq-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0019FF" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="faq-answer">
+                <p>Мы используем трехуровневую систему верификации данных. Каждый отчёт проходит автоматическую проверку на выбросы и аномалии. Гарантируем точность 99.9%.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Есть ли пробный период?</h3>
+                <div class="faq-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0019FF" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="faq-answer">
+                <p>Да, мы предоставляем 14 дней бесплатного доступа ко всем функциям платформы. Вам не нужна банковская карта для начала.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- БЛОК 5: Карусель отзывов -->
+<div class="block5-testimonials">
+    <h2>Что говорят клиенты</h2>
+    <div class="testimonials-slider">
+        <button class="slider-btn slider-prev" id="prevTestimonial">←</button>
+        <div class="testimonials-track" id="testimonialsTrack">
+            <div class="testimonial-card">
+                <div class="testimonial__rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="testimonial__text">"За первый месяц использования аналитики мы увеличили конверсию на 34%. Рекомендую!"</div>
+                <div class="testimonial__author">
+                    <div class="testimonial__avatar">АК</div>
+                    <div>
+                        <div class="testimonial__name">Анна Коваленко</div>
+                        <div class="testimonial__role">CEO, MarketFlow</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial__rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="testimonial__text">"Интеграция заняла 10 минут. Поддержка всегда на связи. Лучший инструмент для аналитики!"</div>
+                <div class="testimonial__author">
+                    <div class="testimonial__avatar">ДМ</div>
+                    <div>
+                        <div class="testimonial__name">Дмитрий Морозов</div>
+                        <div class="testimonial__role">Head of Marketing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial__rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <div class="testimonial__text">"Отличный дашборд! Хотелось бы больше интеграций, но в целом всё супер."</div>
+                <div class="testimonial__author">
+                    <div class="testimonial__avatar">ЕП</div>
+                    <div>
+                        <div class="testimonial__name">Елена Павлова</div>
+                        <div class="testimonial__role">Product Owner</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn slider-next" id="nextTestimonial">→</button>
+    </div>
+</div>
+
+<!-- БЛОК 6: Форма с прогресс-баром -->
+<div class="block6-form">
+    <div class="form-enhanced">
+        <h2>Получите консультацию</h2>
+        <p>Оставьте заявку и мы подберём решение под ваш бизнес</p>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <form id="consultForm">
+            <div class="form-group">
+                <label>Ваше имя</label>
+                <input type="text" id="name" placeholder="Иван Иванов">
+                <div class="error-message" id="nameError">Введите имя</div>
+            </div>
+            <div class="form-group">
+                <label>Телефон или Email</label>
+                <input type="text" id="contact" placeholder="+7 (999) 123-45-67">
+                <div class="error-message" id="contactError">Введите корректный контакт</div>
+            </div>
+            <div class="form-group">
+                <label>Сообщение</label>
+                <textarea rows="3" id="message" placeholder="Расскажите о вашей задаче"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="info">
+            <b>Информация</b>
+            <a href="#">Пользовательское соглашение</a>
+            <p>© IT-marketing, 2026. Все права защищены.</p>
+        </div>
+        <div class="contacts">
+            <b>Контакты</b>
+            <div class="links">
+                <div class="TG">
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.7509 0.75L1.42289 7.123C1.02789 7.287 0.830889 7.37 0.779889 7.477C0.757785 7.52274 0.747657 7.57334 0.750456 7.62407C0.753254 7.67479 0.768887 7.72397 0.79589 7.767C0.85889 7.867 1.06389 7.927 1.47589 8.048L7.25089 9.75M16.7509 0.75L14.6859 13.799C14.6459 14.053 14.6259 14.18 14.5589 14.249C14.5306 14.2798 14.4961 14.3044 14.4577 14.3211C14.4193 14.3378 14.3778 14.3463 14.3359 14.346C14.2389 14.346 14.1309 14.274 13.9149 14.13L10.9849 12.174M16.7509 0.75L7.25089 9.75M7.25089 9.75L7.40689 14.05C7.40689 14.384 7.40689 14.551 7.47589 14.635C7.53589 14.709 7.62589 14.751 7.72189 14.75C7.83189 14.749 7.96189 14.642 8.22189 14.43L10.9849 12.174M7.25089 9.75L10.9849 12.174" stroke="#6F6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <a href="https://telegram.org" target="_blank">Telegram</a>
+                </div>
+                <div class="VK">
+                    <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1.45312C0 0.859375 0.40625 0.625 0.90625 0.59375L3.23438 0.609375C3.375 0.609375 3.5 0.703125 3.54688 0.84375C4.07812 2.5625 4.73438 3.625 5.51562 4.82812C5.5625 4.92188 5.64062 4.96875 5.71875 4.96875C5.78125 4.96875 5.84375 4.9375 5.89062 4.85938L5.9375 4.6875L5.95312 1.98438C5.95312 1.59375 5.76562 1.53125 5.32812 1.46875C5.15625 1.4375 5.04688 1.28125 5.04688 1.125C5.04688 1.09375 5.04688 1.0625 5.0625 1.03125C5.28125 0.359375 5.96875 0.015625 6.9375 0.015625L7.8125 0C8.53125 0 9.1875 0.3125 9.1875 1.23438V4.78125C9.25 4.82812 9.3125 4.85938 9.39062 4.85938C9.51562 4.85938 9.67188 4.78125 9.79688 4.57812C10.6094 3.4375 11.5312 2.07812 11.6562 1.35938C11.6562 1.32812 11.6719 1.3125 11.6875 1.28125C11.8594 0.9375 12.2969 0.703125 12.4844 0.640625C12.5156 0.625 12.5625 0.609375 12.625 0.609375H15.0469L15.2031 0.625C15.4375 0.625 15.6094 0.78125 15.6875 0.921875C15.8281 1.14062 15.7969 1.375 15.8125 1.46875V1.57812C15.5781 3 13.9531 4.59375 13.2656 5.625C13.1719 5.75 13.125 5.85938 13.125 5.96875C13.125 6.0625 13.1719 6.15625 13.25 6.25L15.5312 9.125C15.6562 9.29688 15.7188 9.5 15.7188 9.67188C15.7188 10.1875 15.2344 10.4844 14.7656 10.5312L14.5 10.5469H12.125C12.0781 10.5469 12.0469 10.5625 12 10.5625C11.7344 10.5625 11.5156 10.4219 11.3594 10.2656C10.8594 9.65625 10.375 9.03125 9.89062 8.42188C9.79688 8.29688 9.76562 8.28125 9.67188 8.21875C9.5625 8.67188 9.46875 9.14062 9.35938 9.60938L9.3125 9.875C9.23438 10.1562 9.03125 10.4531 8.65625 10.5312L8.4375 10.5469H6.90625C4.20312 10.5469 1.78125 6.70312 0.078125 1.90625C0.03125 1.78125 0 1.60938 0 1.45312ZM9.39062 5.5C8.98438 5.5 8.53125 5.26562 8.53125 4.82812V1.23438C8.53125 0.8125 8.34375 0.65625 7.82812 0.65625L6.9375 0.6875C6.4375 0.6875 6.15625 0.765625 5.92188 0.921875C6.28125 1.09375 6.60938 1.32812 6.60938 1.98438V4.73438C6.5625 5.28125 6.10938 5.64062 5.67188 5.64062C5.375 5.64062 5.10938 5.46875 4.95312 5.1875C4.25 4.125 3.65625 3.125 3.14062 1.6875L3 1.28125L0.921875 1.26562C0.640625 1.26562 0.671875 1.28125 0.671875 1.42188C0.671875 1.51562 0.6875 1.64062 0.703125 1.71875L1.03125 2.59375C2.73438 7 4.875 9.89062 6.90625 9.89062H8.46875C8.6875 9.89062 8.67188 9.625 8.71875 9.46875L9.01562 8.09375C9.07812 7.95312 9.125 7.82812 9.23438 7.71875C9.35938 7.59375 9.5 7.54688 9.64062 7.54688C9.9375 7.54688 10.2188 7.78125 10.4062 8L11.7344 9.6875C11.8438 9.85938 11.9375 9.89062 12 9.89062H14.5781C14.8281 9.89062 15.0469 9.8125 15.0469 9.65625C15.0469 9.60938 15.0312 9.54688 15 9.5L12.7344 6.67188C12.5469 6.4375 12.4688 6.20312 12.4688 5.96875C12.4688 5.71875 12.5625 5.46875 12.7188 5.25C13.375 4.26562 14.7812 2.85938 15.1094 1.70312L15.1562 1.5C15.1406 1.42188 15.1406 1.35938 15.125 1.28125H12.6719C12.5156 1.34375 12.3906 1.4375 12.2969 1.5625L12.2031 1.85938C11.8438 2.85938 10.8594 4.23438 10.1562 5.1875C9.92188 5.40625 9.65625 5.5 9.39062 5.5Z" fill="#565656"/>
+                    </svg>
+                    <a href="https://vk.ru" target="_blank">Вконтакте</a>
+                </div>
+                <div class="Rutube">
+                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.75 7.75C0.75 4.45 0.75 2.8 2.214 1.775C3.68 0.75 6.036 0.75 10.75 0.75C15.464 0.75 17.821 0.75 19.285 1.775C20.749 2.8 20.75 4.45 20.75 7.75C20.75 11.05 20.75 12.7 19.285 13.725C17.822 14.75 15.464 14.75 10.75 14.75C6.036 14.75 3.679 14.75 2.214 13.725C0.749 12.7 0.75 11.05 0.75 7.75Z" stroke="#565656" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.25 5.65789V9.84189C9.25027 9.89574 9.26113 9.949 9.28198 9.99864C9.30283 10.0483 9.33325 10.0933 9.3715 10.1312C9.40976 10.1691 9.45511 10.1991 9.50495 10.2194C9.5548 10.2398 9.60816 10.2502 9.662 10.2499C9.74314 10.2509 9.82266 10.2272 9.89001 10.1819L13.065 8.10789C13.1215 8.07132 13.168 8.02125 13.2003 7.96221C13.2326 7.90316 13.2496 7.837 13.2499 7.76971C13.2502 7.70241 13.2337 7.6361 13.202 7.57677C13.1702 7.51744 13.1242 7.46696 13.068 7.42989L9.893 5.31989C9.80224 5.25913 9.69118 5.23661 9.58391 5.2572C9.47664 5.27779 9.38182 5.33984 9.32 5.42989C9.27403 5.49701 9.24961 5.57654 9.25 5.65789Z" stroke="#565656" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <a href="https://rutube.ru" target="_blank">Rutube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="./script2.js"></script>
+</html>
