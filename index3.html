@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="./style2.css">
+    <link rel="stylesheet" href="./style3.css">
     <title>Document</title>
 </head>
 <body>
@@ -33,102 +32,116 @@
 
 
 
-<div class="block1-enhanced">
-        <div class="floating-elements" id="floatingElements"></div>
-        <div class="hero-enhanced__content">
-            <div class="hero-enhanced__badge"><span>Инновации 2026</span></div>
-            <h1 class="hero-enhanced__title">Аналитика будущего <span>уже сегодня</span></h1>
-            <p class="hero-enhanced__desc">Нейросетевые алгоритмы, предиктивная аналитика и автоматизация процессов — всё это доступно в единой платформе для вашего бизнеса.</p>
-            <div class="hero-enhanced__stats">
-                <div class="stat-enhanced"><span class="stat-enhanced__number" data-target="500">0</span><span class="stat-enhanced__label">+ клиентов</span></div>
-                <div class="stat-enhanced"><span class="stat-enhanced__number" data-target="99.9">0</span><span class="stat-enhanced__label">% точности</span></div>
-                <div class="stat-enhanced"><span class="stat-enhanced__number" data-target="24">0</span><span class="stat-enhanced__label">/7 поддержка</span></div>
+
+
+ <div class="strategy-container">
+    <!-- БЛОК 1: Вступление / Стратегический подход -->
+    <div class="strategy-block" id="blockHero">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: space-between;">
+            <div style="flex: 1.4;">
+                <h2 style="color: var(--primary-color); font-size: 2.4rem;">Стратегия роста 360°</h2>
+                <h3 style="font-size: 1.8rem; margin: 0.75rem 0;">От аудита до масштабирования</h3>
+                <p>Разрабатываем маркетинговую стратегию, которая объединяет цифровые каналы, продукт и клиентский опыт. Мы не даём шаблонов — только data-driven решения для предсказуемого ROI.</p>
+                <button class="btn-strategy" data-action="calc">Рассчитать стратегию →</button>
+            </div>
+            <div style="flex: 0.8; text-align: center;">
+                <img id="heroImage" class="custom-img" src="./src/img/16.png" viewBox='0 0 100 100'%3E%3Ccircle cx='100' cy='100' r='45' fill='%23f0f0ff'/%3E%3Cpath fill='%230019FF' d='M30,60 L45,35 L60,55 L75,40 L70,70 L30,70 Z' opacity='0.8'/%3E%3C/svg%3E" alt="Strategy" style="width: 30rem; height: 30rem; object-fit: contain;" data-img-key="hero">
             </div>
         </div>
     </div>
 
-    <!-- БЛОК 2: 3D карточки с новыми иконками -->
-    <div class="block2-advanced">
-        <h2>Ключевые возможности</h2>
-        <p>Всё необходимое для принятия решений на основе данных</p>
-        <div class="cards-3d" id="cards3dContainer">
-            <div class="card-3d" data-tilt>
-                <img src="./src/img/11.png" alt="AI Dashboards illustration">
-                <div class="card-3d__title">Дашборды реального времени</div>
-                <div class="card-3d__desc">Визуализируйте данные в удобных графиках и диаграммах с автообновлением каждую секунду.</div>
-                <a href="#" class="card-3d__link">Подробнее →</a>
+    <!-- БЛОК 2: Направления стратегии (3 карточки) -->
+    <div class="strategy-block" id="blockDirections">
+        <h2>Ключевые векторы стратегии</h2>
+        <div class="grid-3cols" id="directionsGrid">
+            <div class="strategy-card" data-card="prod">
+                <img id="imgProduct" class="custom-img" src=./src/img/17.png fill='%230019FF' viewBox='10 10 60 60'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E" alt="product">
+                <h4>Продуктовая стратегия</h4>
+                <p>Позиционирование, УТП, карта путей клиента, CJM и воронка конверсии.</p>
             </div>
-            <div class="card-3d" data-tilt>
-                <img src="./src/img/12.png" alt="AI Dashboards illustration">
-                <div class="card-3d__title">AI-прогнозы</div>
-                <div class="card-3d__desc">Нейросеть анализирует исторические данные и предсказывает тренды с точностью до 95%.</div>
-                <a href="#" class="card-3d__link">Подробнее →</a>
+            <div class="strategy-card" data-card="media">
+                <img id="imgMedia" class="custom-img" src=./src/img/18.png fill='%230019FF' viewBox='0 0 24 24'%3E%3Cpath d='M3 3h18v18H3zM7 7h10v10H7z'/%3E%3C/svg%3E" alt="media">
+                <h4>Медиа & каналы</h4>
+                <p>Подбор каналов (SEO, контекст, соцсети, таргет) с распределением бюджета.</p>
             </div>
-            <div class="card-3d" data-tilt>
-                <img src="./src/img/15.png" alt="AI Dashboards illustration">
-                <div class="card-3d__title">50+ интеграций</div>
-                <div class="card-3d__desc">Подключайте CRM, рекламные кабинеты, коллтрекинг и любые API за 5 минут.</div>
-                <a href="#" class="card-3d__link">Подробнее →</a>
+            <div class="strategy-card" data-card="analytics">
+                <img id="imgAnalytics" class="custom-img" src=./src/img/19.png fill='%230019FF' viewBox='0 0 24 24'%3E%3Cpath d='M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 10c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z'/%3E%3C/svg%3E" alt="analytics">
+                <h4>Аналитика & KPI</h4>
+                <p>Настройка сквозной аналитики, дашборды, прогнозы и атрибуция.</p>
             </div>
         </div>
     </div>
 
-    <!-- БЛОК 3: Таймлайн развития -->
-    <div class="block3-timeline">
-        <h2>Этапы развития платформы</h2>
-        <div class="timeline">
-            <div class="timeline-item"><div class="timeline-item__year">2023</div><div class="timeline-item__title">Запуск MVP</div><div class="timeline-item__desc">Первая версия платформы с базовым набором метрик и отчётов.</div></div>
-            <div class="timeline-item"><div class="timeline-item__year">2024</div><div class="timeline-item__title">Нейросетевой движок</div><div class="timeline-item__desc">Интеграция ML-моделей для прогнозирования и аномалий.</div></div>
-            <div class="timeline-item"><div class="timeline-item__year">2025</div><div class="timeline-item__title">Экосистема</div><div class="timeline-item__desc">API для разработчиков, мобильное приложение, авто-отчёты в Telegram.</div></div>
+    <!-- БЛОК 3: Этапы разработки (кликабельный функционал) -->
+    <div class="strategy-block" id="blockStages">
+        <h2>Этапы внедрения стратегии</h2>
+        <div class="stages-list" id="stagesContainer">
+            <div class="stage-item" data-stage="01"><div class="stage-num">01</div><h4>Аудит</h4><p>Анализ рынка, конкурентов, текущих метрик</p></div>
+            <div class="stage-item" data-stage="02"><div class="stage-num">02</div><h4>Гипотезы</h4><p>Формирование гипотез роста и тест-драйв</p></div>
+            <div class="stage-item" data-stage="03"><div class="stage-num">03</div><h4>План действий</h4><p>Дорожная карта на 3/6/12 месяцев</p></div>
+            <div class="stage-item" data-stage="04"><div class="stage-num">04</div><h4>Запуск</h4><p>Интеграция с командами, настройка рекламы</p></div>
+            <div class="stage-item" data-stage="05"><div class="stage-num">05</div><h4>Оптимизация</h4><p>Еженедельные спринты и улучшение ROI</p></div>
+        </div>
+        <div class="highlight-text" id="dynamicStageDesc">
+            <p> Каждая стратегия сопровождается персональным куратором и ежемесячным отчетом с рекомендациями. Нажмите на любой этап — получите детали.</p>
         </div>
     </div>
 
-    <!-- БЛОК 4: FAQ Аккордеон -->
-    <div class="block4-faq">
-        <h2>Часто задаваемые вопросы</h2>
-        <div class="faq-grid">
-            <div class="faq-item"><div class="faq-question"><h3>Как происходит интеграция с моей CRM?</h3><div class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0019FF" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div></div><div class="faq-answer"><p>Мы подключаемся через API вашей CRM. Процесс занимает не более 15 минут под руководством нашего специалиста. Поддерживаем amoCRM, Bitrix24, RetailCRM и 50+ других систем.</p></div></div>
-            <div class="faq-item"><div class="faq-question"><h3>Какая гарантия точности данных?</h3><div class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0019FF" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div></div><div class="faq-answer"><p>Мы используем трехуровневую систему верификации данных. Каждый отчёт проходит автоматическую проверку на выбросы и аномалии. Гарантируем точность 99.9%.</p></div></div>
-            <div class="faq-item"><div class="faq-question"><h3>Есть ли пробный период?</h3><div class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0019FF" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div></div><div class="faq-answer"><p>Да, мы предоставляем 14 дней бесплатного доступа ко всем функциям платформы. Вам не нужна банковская карта для начала.</p></div></div>
-        </div>
+    <!-- БЛОК 4: Метрики эффективности -->
+    <div class="strategy-block">
+        <h2>Метрики, которые мы гарантируем</h2>
+        <table class="metrics-table" id="metricsTable">
+            <thead><tr><th>Показатель</th><th>План роста (3 мес)</th><th>Метод достижения</th></tr></thead>
+            <tbody>
+                <tr><td>ROMI</td><td>≥ 180%</td><td>Оптимизация связок, LTV-модели</td></tr>
+                <tr><td>CAC снижение</td><td>-25%</td><td>Автоматизация воронок</td></tr>
+                <tr><td>Конверсия в лид</td><td>+40%</td><td>A/B тесты, персонализация</td></tr>
+                <tr><td>Доля рынка</td><td>+15%</td><td>Агрессивный медиаплан</td></tr>
+            </tbody>
+        </table>
+        <button class="btn-strategy" data-action="kpiRequest" style="margin-top: 1rem;">Запросить детали KPI</button>
     </div>
 
-    <!-- БЛОК 5: Карусель отзывов -->
-    <div class="block5-testimonials">
-        <h2>Что говорят клиенты</h2>
-        <div class="testimonials-slider">
-            <button class="slider-btn slider-prev" id="prevTestimonial">←</button>
-            <div class="testimonials-track" id="testimonialsTrack">
-                <div class="testimonial-card"><div class="testimonial__rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="testimonial__text">"За первый месяц использования аналитики мы увеличили конверсию на 34%. Рекомендую!"</div><div class="testimonial__author"><div class="testimonial__avatar">АК</div><div><div class="testimonial__name">Анна Коваленко</div><div class="testimonial__role">CEO, MarketFlow</div></div></div></div>
-                <div class="testimonial-card"><div class="testimonial__rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="testimonial__text">"Интеграция заняла 10 минут. Поддержка всегда на связи. Лучший инструмент для аналитики!"</div><div class="testimonial__author"><div class="testimonial__avatar">ДМ</div><div><div class="testimonial__name">Дмитрий Морозов</div><div class="testimonial__role">Head of Marketing</div></div></div></div>
-                <div class="testimonial-card"><div class="testimonial__rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span></div><div class="testimonial__text">"Отличный дашборд! Хотелось бы больше интеграций, но в целом всё супер."</div><div class="testimonial__author"><div class="testimonial__avatar">ЕП</div><div><div class="testimonial__name">Елена Павлова</div><div class="testimonial__role">Product Owner</div></div></div></div>
+    <!-- БЛОК 5: Кейсы / Преимущества работы -->
+    <div class="strategy-block">
+        <h2>Наши стратегии в цифрах</h2>
+        <div class="grid-2cols" id="casesGrid">
+            <div class="strategy-card" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+                <span style="font-size: 2.8rem; font-weight: 800; color: var(--primary-color);">+210%</span>
+                <h4>Рост трафика</h4>
+                <p>Клиенту из e-commerce за 6 месяцев масштабирования SEO+контекст.</p>
             </div>
-            <button class="slider-btn slider-next" id="nextTestimonial">→</button>
+            <div class="strategy-card" style="text-align: left;">
+                <span style="font-size: 2.8rem; font-weight: 800; color: var(--primary-color);">↓ 42%</span>
+                <h4>Стоимость лида</h4>
+                <p>Снизили CPA у b2b-платформы за счёт ретаргетинга и триггерных цепочек.</p>
+            </div>
+            <div class="strategy-card" style="text-align: left;">
+                <span style="font-size: 2.8rem; font-weight: 800; color: var(--primary-color);">3.2x</span>
+                <h4>ROAS</h4>
+                <p>Рекордный показатель в сфере финансовых услуг за 2 месяца тестов.</p>
+            </div>
+            <div class="strategy-card" style="text-align: left;">
+                <span style="font-size: 2.8rem; font-weight: 800; color: var(--primary-color);">87%</span>
+                <h4>Удержание клиентов</h4>
+                <p>После внедрения стратегии лояльности и автоматизации CRM.</p>
+            </div>
         </div>
     </div>
 
-    <!-- БЛОК 6: Форма с прогресс-баром + картинка справа (форма сдвинута влево) -->
-    <div class="block6-form">
-        <div class="form-enhanced">
-            <h2>Получите консультацию</h2>
-            <p>Оставьте заявку и мы подберём решение под ваш бизнес</p>
-            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-            <form id="consultForm">
-                <div class="form-group"><label>Ваше имя</label><input type="text" id="name" placeholder="Иван Иванов"><div class="error-message" id="nameError">Введите имя</div></div>
-                <div class="form-group"><label>Телефон или Email</label><input type="text" id="contact" placeholder="+7 (999) 123-45-67"><div class="error-message" id="contactError">Введите корректный контакт</div></div>
-                <div class="form-group"><label>Сообщение</label><textarea rows="3" id="message" placeholder="Расскажите о вашей задаче"></textarea></div>
-                <button type="submit" class="submit-btn">Отправить заявку</button>
-            </form>
+    <!-- БЛОК 6: Формат сотрудничества -->
+    <div class="strategy-block" style="background: #f4f4f4; text-align: center;">
+        <h2 style="color: var(--secondary-color);">Готовая стратегия под ваш бюджет?</h2>
+        <p style="max-width: 80%; margin: 0.5rem auto;">Пройдите быстрый опрос и получите дорожную карту с прогнозом продаж и расчётом окупаемости за 3 дня.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.8rem;">
+            <button class="btn-strategy" data-action="selectStrategy">Подобрать стратегию →</button>
+            <button class="btn-strategy" data-action="chatExpert" style="background: #fff; color: #0019FF; border: 1px solid #0019FF;">Чат с экспертом</button>
         </div>
-        <div class="form-image">
-            <img src="./src/img/11.png" alt="AI Dashboards illustration">
-        </div>
+        <p style="font-size: 0.9rem; margin-top: 1.5rem; color: #6c6c6c;">*Бесплатный аудит текущей стратегии при заявке до конца месяца</p>
     </div>
+</div>
 
-
-
-
-
+<div id="toastMsg" class="toast-notify"></div>
 
 
 
@@ -300,9 +313,6 @@
 
 
 
-
-
-
 </body>
-<script src="./script2.js"></script>
+<script src="./script3.js"></script>
 </html>

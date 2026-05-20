@@ -1,44 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-  const closeBtn = document.querySelector('.modal-close');
-
-  // Находим все изображения в карточках
-  document.querySelectorAll('.card img').forEach(img => {
-    img.style.cursor = 'pointer';
-
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;               // копируем src
-      modalImg.alt = img.alt;
-      modal.classList.add('show');          // показываем
-      document.body.style.overflow = 'hidden'; // блокируем скролл страницы
-    });
-  });
-
-  // Закрытие по крестику
-  closeBtn.addEventListener('click', closeModal);
-
-  // Закрытие по клику на фон (вне картинки)
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Закрытие по Esc
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('show')) {
-      closeModal();
-    }
-  });
-
-  function closeModal() {
-    modal.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-});
-
-// Хедер
+ // Хедер
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
   if (window.scrollY > 24) {
@@ -143,28 +103,190 @@ window.addEventListener('scroll', () => {
     });
 }
 
-// Или с проверкой на главную страницу
-document.addEventListener('DOMContentLoaded', function() {
-    const logoLink = document.querySelector('.logo-link');
-    
-    if (logoLink) {
-        logoLink.addEventListener('click', function(e) {
-            // Если мы на главной странице
-            if (window.location.pathname === '/' || 
-                window.location.pathname.includes('index.html')) {
-                e.preventDefault();
-                
-                // Плавная прокрутка к верху
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+
+const dragCases = document.querySelectorAll('.drag-case');
+    const dropZoneBlock = document.getElementById('dropZone');
+    const droppedList = document.getElementById('droppedList');
+    let romiBonus = 0;
+
+    dragCases.forEach(el => {
+        el.addEventListener('dragstart', e => {
+            e.dataTransfer.setData('text/plain', JSON.stringify({
+                name: el.querySelector('span').innerText,
+                romi: parseInt(el.dataset.romi)
+            }));
+        });
+    });
+
+    dropZoneBlock.addEventListener('dragover', e => e.preventDefault());
+    dropZoneBlock.addEventListener('drop', e => {
+        e.preventDefault();
+        const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+        const badge = document.createElement('div');
+        badge.className = 'dropped-badge';
+        badge.innerHTML = data.name + ' +' + data.romi + '%';
+        droppedList.appendChild(badge);
+        romiBonus += data.romi;
+        document.getElementById('romiValue').innerText = (215 + romiBonus) + '%';
+        document.getElementById('reachValue').innerText = (124 + Math.floor(romiBonus / 2));
+        document.getElementById('convValue').innerText = (4.8 + (romiBonus / 100)).toFixed(1) + '%';
+    });
+
+    // БЛОК 3: ROI Калькулятор
+    function calculateROI() {
+        let budget = parseFloat(document.getElementById('budgetInput').value);
+        let revenue = parseFloat(document.getElementById('revenueInput').value);
+        let course = parseFloat(document.getElementById('courseInput').value);
+        let roiCurrent = ((revenue - budget) / budget * 100).toFixed(0);
+        let roiAfter = ((revenue - budget - course) / budget * 100 + 18).toFixed(0);
+        document.getElementById('roiCurrent').innerText = roiCurrent + '%';
+        document.getElementById('roiAfter').innerText = roiAfter + '%';
+    }
+    document.getElementById('budgetInput').addEventListener('input', calculateROI);
+    document.getElementById('revenueInput').addEventListener('input', calculateROI);
+    document.getElementById('courseInput').addEventListener('input', calculateROI);
+    calculateROI();
+
+    // БЛОК 4: Переключение тарифов
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const priceValuesTariffs = document.querySelectorAll('.price-value');
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            toggleBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const period = btn.dataset.period;
+            priceValuesTariffs.forEach(el => {
+                let val = period === 'month' ? el.dataset.month : el.dataset.year;
+                el.innerText = parseInt(val).toLocaleString() + ' ₽';
+            });
+        });
+    });
+
+    // БЛОК 5: Roadmap прогресс
+    const roadmapSlider = document.getElementById('roadmapSlider');
+    const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+    const lines = ['line1', 'line2', 'line3', 'line4'];
+    roadmapSlider.addEventListener('input', (e) => {
+        let val = parseInt(e.target.value);
+        for (let i = 0; i < steps.length; i++) {
+            let circle = document.getElementById(steps[i]);
+            if (circle) circle.setAttribute('fill', i < val ? 'var(--primary-color)' : '#ccc');
+        }
+        for (let i = 0; i < lines.length; i++) {
+            let line = document.getElementById(lines[i]);
+            if (line) line.setAttribute('stroke', i < val ? 'var(--primary-color)' : '#ccc');
+        }
+    });
+
+    // БЛОК 6: Видео модалка
+    const videoCards = document.querySelectorAll('.video-card');
+    const videoModal = document.getElementById('videoModal');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalClose = document.querySelector('.modal-close');
+
+    videoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            let videoUrl = card.dataset.video;
+            modalIframe.src = videoUrl;
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    modalClose.addEventListener('click', () => {
+        videoModal.classList.remove('active');
+        modalIframe.src = '';
+        document.body.style.overflow = '';
+    });
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            videoModal.classList.remove('active');
+            modalIframe.src = '';
+            document.body.style.overflow = '';
+        }
+    });
+
+    // БЛОК 7: Фильтрация и сортировка таблицы
+    let currentTag = 'all';
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const tableRows = document.querySelectorAll('#tableBody tr');
+
+    function filterTable() {
+        tableRows.forEach(row => {
+            if (currentTag === 'all' || row.dataset.tag === currentTag) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
             }
-            // Если не на главной - переход на главную произойдет по ссылке
         });
     }
-});
 
+    filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            filterChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            currentTag = chip.dataset.tag;
+            filterTable();
+        });
+    });
+
+    // Сортировка
+    let sortColumn = '';
+    let sortDirection = 1;
+    document.querySelectorAll('.cases-table th').forEach(th => {
+        th.addEventListener('click', () => {
+            let sortKey = th.dataset.sort;
+            if (sortColumn === sortKey) {
+                sortDirection *= -1;
+            } else {
+                sortColumn = sortKey;
+                sortDirection = 1;
+            }
+            let rows = Array.from(tableRows);
+            rows.sort((a, b) => {
+                let aVal = a.cells[sortKey === 'name' ? 0 : 1].innerText;
+                let bVal = b.cells[sortKey === 'name' ? 0 : 1].innerText;
+                if (sortKey === 'roi') {
+                    return (parseFloat(aVal) - parseFloat(bVal)) * sortDirection;
+                }
+                return aVal.localeCompare(bVal) * sortDirection;
+            });
+            rows.forEach(row => document.getElementById('tableBody').appendChild(row));
+        });
+    });
+
+    // БЛОК 8: Чат ассистент
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendMessage');
+
+    function addMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+        msgDiv.innerHTML = `<div class="message-content">${text}</div>`;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    sendBtn.addEventListener('click', () => {
+        let text = chatInput.value.trim();
+        if (!text) return;
+        addMessage(text, true);
+        chatInput.value = '';
+        setTimeout(() => {
+            if (text.toLowerCase().includes('лид') || text.toLowerCase().includes('трафик')) {
+                addMessage('Рекомендую курс "Продвинутый PPC с разбором 25 кейсов по привлечению трафика".', false);
+            } else if (text.toLowerCase().includes('seo')) {
+                addMessage('Для SEO рекомендую программу "SEO-мастер 2.0" с практическими кейсами по семантике и ссылочному.', false);
+            } else {
+                addMessage('Посмотрите тариф "Профессиональный" — в него входит 35+ кейсов и персональный наставник.', false);
+            }
+        }, 600);
+    });
+
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendBtn.click();
+    });
 
 
 
@@ -501,6 +623,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
 });
+
+
+
+
+
 
 
 

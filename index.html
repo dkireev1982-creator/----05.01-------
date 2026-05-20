@@ -14,10 +14,10 @@
         <nav>
             <a href="index.html">Главная</a>
             <a href="index2.html">Аналитика</a>
-            <a href="#">Стратегия</a>
-            <a href="#">Кейсы</a>
+            <a href="index3.html">Стратегия</a>
+            <a href="index4.html">Кейсы</a>
         </nav>
-        <button class="desktop-btn">Записаться на курс </button>
+        <button class="desktop-btn" data-modal-open>Записаться на курс</button>
         <!-- Бургер-меню -->
         <div class="burger-button">
             <div class="open-mobile-menu"></div>
@@ -26,9 +26,9 @@
         <div class="mobile-menu">
             <a href="index.html" class="mobile-nav-link">Главная</a>
             <a href="index2.html" class="mobile-nav-link">Аналитика </a>
-            <a href="#" class="mobile-nav-link">Стратегия </a>
-            <a href="#" class="mobile-nav-link">Кейсы</a>
-            <button class="mobile-application-btn">Записаться на курс</button>
+            <a href="index3.html" class="mobile-nav-link">Стратегия </a>
+            <a href="index4.html" class="mobile-nav-link">Кейсы</a>
+            <button class="mobile-application-btn" data-modal-open>Записаться на курс</button>
         </div>
     </header>
 
@@ -38,7 +38,7 @@
         <div class="text-content">
             <h1><span style="color: var(--primary-color);">Ваша продуктивность</span> — наша главная цель.</h1>
             <p>Готовые маркетинговые решения под ваш бизнес. Сбалансированные воронки, которые автоматизируют процессы, снижают расходы и гарантируют предсказуемый рост продаж 24/7.</p>
-            <button>Записаться на курс</button>
+           <button data-modal-open>Записаться на курс</button>
         </div>
         <img src="./src/img/23.png" alt="Мужчина в очках" style="width: 40rem; height: 40.5625rem;margin-top: -6.8125rem;">
     </div>
@@ -58,7 +58,7 @@
                     <time datetime="2026-06-13">13.06.2026</time>
                 </div>
                 <p>Готовая воронка для первых продаж без перегрева бюджета. Идеальный баланс между охватом</p>
-                <button>Записаться</button>
+                <button data-modal-open>Записаться</button>
             </div>
 
             <!-- Вторая карточка -->
@@ -72,7 +72,7 @@
                     <time datetime="2026-06-13">13.06.2026</time>
                 </div>
                 <p>Фокус на защите от блокировок и стабильности трафика. Мультиаккаунтинг, антидетект, резервные связки.</p>
-                <button>Записаться</button>
+                <button data-modal-open>Записаться</button>
             </div>
 
             <!-- Третья карточка -->
@@ -86,7 +86,7 @@
                     <time datetime="2026-06-13">13.06.2026</time>
                 </div>
                 <p>Минимальные вложения в запуск и тестирование гипотез. Только связки, которые окупаются с первых дней.</p>
-                <button>Записаться</button>
+                <button data-modal-open>Записаться</button>
             </div>
 
             <!-- Четвертая карточка -->
@@ -100,7 +100,7 @@
                     <time datetime="2026-06-13">13.06.2026</time>
                 </div>
                 <p>Для растущих брендов и высокобюджетных кампаний,истемы, которые выдерживают кратный рост трафика.</p>
-                <button>Записаться</button>
+                 <button data-modal-open>Записаться</button>
             </div>
         </div>
         <h2 class="more">Загрузить еще...</h2>
@@ -167,6 +167,140 @@
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modalImage">
     </div>
+
+
+
+
+
+
+<!-- Модальное окно -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container">
+        <!-- Состояние формы (по умолчанию) -->
+        <div id="formState">
+            <div class="modal-header">
+                <h2>Запись на <span>курс</span></h2>
+                <div class="modal-close" id="closeModalBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- Преимущества -->
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span>Доступ к 50+ кейсам</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span>Личный наставник</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span>Рассрочка 0%</span>
+                    </div>
+                </div>
+
+                <!-- Форма -->
+                <form id="applicationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ваше имя <span class="required">*</span></label>
+                            <input type="text" id="nameInput" placeholder="Александр">
+                            <div class="error-text" id="nameError">Пожалуйста, укажите имя</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Город</label>
+                            <input type="text" id="cityInput" placeholder="Москва">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Телефон <span class="required">*</span></label>
+                            <input type="tel" id="phoneInput" placeholder="+7 (999) 123-45-67">
+                            <div class="error-text" id="phoneError">Укажите корректный номер телефона</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" id="emailInput" placeholder="alex@example.com">
+                            <div class="error-text" id="emailError">Укажите корректный email</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Выберите тариф</label>
+                        <select id="tariffSelect">
+                            <option value="Базовый — 9 900 ₽">Базовый — 9 900 ₽</option>
+                            <option value="Профессиональный — 19 900 ₽" selected>Профессиональный — 19 900 ₽</option>
+                            <option value="Бизнес — 39 900 ₽">Бизнес — 39 900 ₽</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Комментарий (по желанию)</label>
+                        <textarea id="commentInput" rows="2" placeholder="Расскажите о ваших задачах..."></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreeCheckbox">
+                        <label for="agreeCheckbox">
+                            Я согласен с <a href="#">условиями обработки персональных данных</a> и подтверждаю свое совершеннолетие
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitFormBtn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Состояние успеха (изначально скрыто) -->
+        <div id="successState" style="display: none;">
+            <div class="modal-header">
+                <h2>Запись на <span>курс</span></h2>
+                <div class="modal-close" id="closeSuccessBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="success-message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round"/>
+                        <polyline points="22 4 12 14.01 9 11.01" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Заявка принята!</h3>
+                    <p>Мы свяжемся с вами в ближайшее время для уточнения деталей и подбора удобной даты старта.</p>
+                    <button id="closeSuccessStateBtn">Закрыть окно</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 <script src="./script.js"></script>
 </html>
